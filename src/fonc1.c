@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Tue Feb 21 18:53:47 2017 julian ladjani
-** Last update Fri Feb 24 13:26:09 2017 julian ladjani
+** Last update Fri Feb 24 15:35:54 2017 julian ladjani
 */
 
 #include "matchstick.h"
@@ -54,7 +54,7 @@ int	verif_line(char *line, t_game *game)
   if (my_str_isnum(line, 1) == 0)
     return (-1);
   nbline = my_getnbr(line) - 1;
-  if (nbline > game->nbline || nbline < 0)
+  if (nbline > game->nbline || nbline < 0 || game->line[nbline] == 0)
     {
       my_putstr("Error: this line is out of range\n", 2);
       return (-1);
@@ -88,7 +88,7 @@ void	take_stick(int nbstick, int line, t_game *game, int type)
   game->nbstick -= nbstick;
   game->line[line] -= nbstick;
   game->linebase[line] = my_getlnbr(my_convertbase(game->line[line], 2, "01"));
-  while (i > 0 && nbstick > 0)
+  while (i >= 0 && nbstick > 0)
     {
       if (cline[i] == '|')
 	{

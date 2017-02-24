@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Tue Feb 21 19:14:57 2017 julian ladjani
-** Last update Fri Feb 24 13:33:19 2017 julian ladjani
+** Last update Fri Feb 24 15:29:31 2017 julian ladjani
 */
 
 #include "matchstick.h"
@@ -67,9 +67,9 @@ int		*create_line(int nbline, int *nbstick)
     {
       line[i] = stick;
       stick += 2;
+      *nbstick += line[i];
       i++;
     }
-  *nbstick = stick - 2;
   line[i] = -1;
   return (line);
 }

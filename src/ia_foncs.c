@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Fri Feb 24 04:34:09 2017 julian ladjani
-** Last update Fri Feb 24 15:14:45 2017 julian ladjani
+** Last update Fri Feb 24 15:36:34 2017 julian ladjani
 */
 
 #include "matchstick.h"
@@ -20,7 +20,7 @@ void	xor_ia(t_game *game)
     stick = game->line[line];
   else
     stick = game->maxtake;
-  while (check_line_withedit(game, line, stick) == 0)
+  while (check_line_withedit(game, line, stick) == 0 && stick > 1)
     {
       stick--;
     }
