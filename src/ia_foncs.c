@@ -5,30 +5,53 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Fri Feb 24 04:34:09 2017 julian ladjani
-** Last update Fri Feb 24 14:14:14 2017 julian ladjani
+** Last update Fri Feb 24 15:11:47 2017 julian ladjani
 */
 
 #include "matchstick.h"
 
 void	xor_ia(t_game *game)
 {
-  /*long	somme;
+  long	somme;
   int	i;
+  int	line;
+  int	stick;
 
   somme = 0;
   i = 0;
-  while (i < nbline)
+  line = search_best_line(game);
+  if (game->line[line] < game->maxtake)
+    stick = game->line[line];
+  else
+    stick = game->maxtake;
+  while (check_line_withedit(game, line, stick) == 0)
     {
-      somme += game->linebase[i];
-      i++;
-      }*/
+      stick--;
+    }
+  take_stick(stick, line, game, 0);
+}
+
+int	search_best_line(t_game *game)
+{
   int	i;
+  int	linestick;
+  int	line;
 
   i = 0;
-  while (game->line[i++] == 0);
-  take_stick(1, i, game, 0);
+  linestick = 0;
+  line = 0;
+  while(i < game->nbline)
+    {
+      if (game->line[i] > linestick)
+	{
+	  linestick = game->line[i];
+	  line = i;
+	}
+      i++;
+    }
+  return (line);
 }
-/*
+
 int	check_line_base(t_game *game)
 {
   long	somme;
@@ -36,13 +59,12 @@ int	check_line_base(t_game *game)
 
   somme = 0;
   i = 0;
-  while	(i < nbline)
+  while	(i < game->nbline)
     {
       somme += game->linebase[i];
       i++;
     }
-  i = 0;
-  
+  return (check_somme(somme));
 }
 
 int	check_line_withedit(t_game *game, int line, int stick)
@@ -52,11 +74,38 @@ int	check_line_withedit(t_game *game, int line, int stick)
 
   somme = 0;
   i = 0;
-  while (i < nbline)
+  if (stick == 0)
+    return (0);
+  while (i < game->nbline)
     {
-      if (i == (line - 1))
-      somme += game->linebase[i];
+      if (i == line)
+	somme += my_getlnbr(my_convertbase(game->line[i] - stick, 2, "01"));
+      else
+	somme += game->linebase[i];
       i++;
     }
+  return (check_somme(somme));
+}
+
+int	check_somme(int somme)
+{
+  int	i;
+  char	*tempsum;
+  int	chiffre;
+
   i = 0;
-}*/
+  if ((tempsum = my_putnbr(somme)) == NULL)
+    return (0);
+  while (tempsum[i] != '\0')
+    {
+      chiffre = tempsum[i] - 48;
+      if (chiffre % 2 != 0)
+	{
+	  free(tempsum);
+	  return (1);
+	}
+      i++;
+    }
+  free(tempsum);
+  return (0);
+}
