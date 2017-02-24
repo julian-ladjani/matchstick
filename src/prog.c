@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Thu Feb 23 16:13:17 2017 julian ladjani
-** Last update Fri Feb 24 13:10:33 2017 julian ladjani
+** Last update Fri Feb 24 14:15:30 2017 julian ladjani
 */
 
 #include "matchstick.h"
@@ -41,6 +41,7 @@ int	my_turn(t_game *game)
 int	ia_turn(t_game *game)
 {
   my_putstr("\nAI's turn...\n", 1);
+  xor_ia(game);
   return (game->nbstick);
 }
 
