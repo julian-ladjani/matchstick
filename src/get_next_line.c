@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Mon Jan  2 15:00:28 2017 julian ladjani
-** Last update Fri Feb 24 13:28:46 2017 julian ladjani
+** Last update Fri Feb 24 16:04:05 2017 julian ladjani
 */
 
 #include "matchstick.h"
@@ -57,14 +57,7 @@ char		*my_line(char *buff, int *nbchar, int last)
   return (NULL);
 }
 
-void		gnl_clear(char **buff, int *offset, int *nbchar)
-{
-  *offset = 0;
-  *nbchar = 0;
-  *buff = NULL;
-}
-
-char		*get_next_line(const int fd)
+char		*get_next_line(const int fd, int *end)
 {
   static int	offset = 0;
   static int	nbchar = 0;
@@ -89,6 +82,6 @@ char		*get_next_line(const int fd)
     }
   if ((line = my_line(buff + nbchar, &nbchar, 1)) != NULL)
     return (line);
-  gnl_clear(&buff, &offset, &nbchar);
+  *end = 1;
   return (NULL);
 }
