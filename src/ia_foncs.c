@@ -5,20 +5,16 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Fri Feb 24 04:34:09 2017 julian ladjani
-** Last update Fri Feb 24 15:11:47 2017 julian ladjani
+** Last update Fri Feb 24 15:14:45 2017 julian ladjani
 */
 
 #include "matchstick.h"
 
 void	xor_ia(t_game *game)
 {
-  long	somme;
-  int	i;
   int	line;
   int	stick;
 
-  somme = 0;
-  i = 0;
   line = search_best_line(game);
   if (game->line[line] < game->maxtake)
     stick = game->line[line];

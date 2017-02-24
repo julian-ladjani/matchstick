@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Tue Feb 21 18:38:22 2017 julian ladjani
-** Last update Fri Feb 24 13:09:00 2017 julian ladjani
+** Last update Fri Feb 24 15:14:20 2017 julian ladjani
 */
 
 #ifndef MATCHSTICK_H_
@@ -42,6 +42,10 @@ char		*get_next_line(const int fd);
 char		**make_map(int  nbline, int maxlenght);
 
 int		verif_args(int ac, char **av);
+int		search_best_line(t_game *game);
+int		check_line_base(t_game *game);
+int		check_line_withedit(t_game *game, int line, int stick);
+int		check_somme(int somme);
 int		my_str_isnum(char *str, int type);
 int		verif_line(char *line, t_game *game);
 int		verif_stick(char *stick, char *line, t_game *game);
