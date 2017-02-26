@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Mon Feb 20 12:57:18 2017 julian ladjani
-** Last update Fri Feb 24 14:57:24 2017 julian ladjani
+** Last update Sun Feb 26 04:18:06 2017 julian ladjani
 */
 
 #include "matchstick.h"
@@ -24,7 +24,6 @@ void	my_putstr(char *str, int output)
   while (str[i++] != '\0');
   write(output, str, i);
 }
-
 
 void	write_map(t_game *game)
 {

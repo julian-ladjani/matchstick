@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Thu Feb 23 15:47:04 2017 julian ladjani
-** Last update Fri Feb 24 13:33:46 2017 julian ladjani
+** Last update Sun Feb 26 04:24:30 2017 julian ladjani
 */
 
 #include "matchstick.h"
@@ -38,7 +38,6 @@ char		*my_convertbase(unsigned int number, int base, char *baseconf)
   my_revstrprintf(snumber);
   return (snumber);
 }
-
 
 int	verif_args(int ac, char **av)
 {

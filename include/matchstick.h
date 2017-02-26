@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Tue Feb 21 18:38:22 2017 julian ladjani
-** Last update Fri Feb 24 16:05:43 2017 julian ladjani
+** Last update Sun Feb 26 05:51:50 2017 julian ladjani
 */
 
 #ifndef MATCHSTICK_H_
@@ -25,6 +25,7 @@ typedef struct	s_game
   int		maxlenght;
   int		nbstick;
   int		nbline;
+  int		nzline;
   int		maxtake;
 }		t_game;
 
@@ -34,6 +35,8 @@ void		my_putstr(char *str, int output);
 void		write_map(t_game *game);
 void		write_play(int nbstick, int line, t_game *game, int type);
 void		xor_ia(t_game *game);
+void		ia_case2(t_game *game, int *tline, int *tstick);
+void		ia_case3(t_game *game, int *tline, int *tstick);
 
 char		*my_revstrprintf(char *str);
 char		*my_convertbase(unsigned int number, int base, char *baseconf);
@@ -53,6 +56,7 @@ int		verif_stick2(int nbstick, int nbline, t_game *game);
 int		calc_maxlenght(int nbline);
 int		my_getnbr(char *str);
 int		my_turn(t_game *game);
+int		my_turn_loop(t_game *game, char *line, char *stick, int end);
 int		ia_turn(t_game *game);
 int		play_matchstick(t_game *game);
 int		*create_line(int nbline, int *nbstick);

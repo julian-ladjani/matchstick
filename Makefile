@@ -5,7 +5,7 @@
 ## Login   <shielder@epitech.net>
 ##
 ## Started on  Mon Nov 21 09:49:22 2016 Maxime PICOT
-## Last update Fri Feb 24 10:52:11 2017 julian ladjani
+## Last update Sun Feb 26 05:52:08 2017 julian ladjani
 ##
 
 COMP	=	gcc
@@ -13,8 +13,10 @@ COMP	=	gcc
 SRC	=	src/fonc1.c		\
 		src/fonc2.c		\
 		src/ia_foncs.c		\
+		src/ia_foncs2.c		\
 		src/get_next_line.c	\
 		src/prog.c		\
+		src/prog2.c		\
 		src/write_game.c	\
 		src/make_game1.c	\
 		src/make_game2.c	\

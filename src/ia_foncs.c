@@ -5,27 +5,10 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Fri Feb 24 04:34:09 2017 julian ladjani
-** Last update Fri Feb 24 15:36:34 2017 julian ladjani
+** Last update Sun Feb 26 05:41:45 2017 julian ladjani
 */
 
 #include "matchstick.h"
-
-void	xor_ia(t_game *game)
-{
-  int	line;
-  int	stick;
-
-  line = search_best_line(game);
-  if (game->line[line] < game->maxtake)
-    stick = game->line[line];
-  else
-    stick = game->maxtake;
-  while (check_line_withedit(game, line, stick) == 0 && stick > 1)
-    {
-      stick--;
-    }
-  take_stick(stick, line, game, 0);
-}
 
 int	search_best_line(t_game *game)
 {
@@ -36,7 +19,7 @@ int	search_best_line(t_game *game)
   i = 0;
   linestick = 0;
   line = 0;
-  while(i < game->nbline)
+  while (i < game->nbline)
     {
       if (game->line[i] > linestick)
 	{
@@ -72,6 +55,8 @@ int	check_line_withedit(t_game *game, int line, int stick)
   i = 0;
   if (stick == 0)
     return (0);
+  if (game->line[line] == 0)
+    return (0);
   while (i < game->nbline)
     {
       if (i == line)
@@ -95,13 +80,13 @@ int	check_somme(int somme)
   while (tempsum[i] != '\0')
     {
       chiffre = tempsum[i] - 48;
-      if (chiffre % 2 != 0)
+      if (chiffre % 2 == 0)
 	{
 	  free(tempsum);
-	  return (1);
+	  return (0);
 	}
       i++;
     }
   free(tempsum);
-  return (0);
+  return (1);
 }

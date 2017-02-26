@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Tue Feb 21 19:14:57 2017 julian ladjani
-** Last update Fri Feb 24 15:29:31 2017 julian ladjani
+** Last update Sun Feb 26 04:44:27 2017 julian ladjani
 */
 
 #include "matchstick.h"
@@ -30,11 +30,11 @@ char		**make_map(int	nbline, int maxlenght)
   int		j;
 
   i = 0;
-  j = 0;
   if ((map = malloc((nbline + 1) * sizeof(char *))) == NULL)
     return (NULL);
   while (i < nbline)
     {
+      j = 0;
       if ((map[i] = malloc((maxlenght + 1) * sizeof(char))) == NULL)
 	return (NULL);
       while (j < maxlenght)
@@ -46,7 +46,6 @@ char		**make_map(int	nbline, int maxlenght)
 	  j++;
 	  map[i][j] = '\0';
 	}
-      j = 0;
       i++;
     }
   map[i] = NULL;
@@ -80,6 +79,7 @@ t_game		make_game(int nbline, int maxtake)
 
   game.maxtake = maxtake;
   game.nbline = nbline;
+  game.nzline = nbline;
   game.maxlenght = calc_maxlenght(nbline);
   game.map = make_map(nbline, game.maxlenght);
   game.nbstick = 0;

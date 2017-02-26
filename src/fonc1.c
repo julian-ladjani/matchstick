@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Tue Feb 21 18:53:47 2017 julian ladjani
-** Last update Fri Feb 24 15:35:54 2017 julian ladjani
+** Last update Sun Feb 26 04:44:53 2017 julian ladjani
 */
 
 #include "matchstick.h"
@@ -97,5 +97,7 @@ void	take_stick(int nbstick, int line, t_game *game, int type)
 	}
       i--;
     }
+  if (game->line[line] <= 0)
+    game->nzline--;
   write_play(stick, line + 1, game, type);
 }
