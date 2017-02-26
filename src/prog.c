@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Thu Feb 23 16:13:17 2017 julian ladjani
-** Last update Sun Feb 26 06:11:30 2017 julian ladjani
+** Last update Sun Feb 26 14:54:15 2017 julian ladjani
 */
 
 #include "matchstick.h"
@@ -31,7 +31,6 @@ int	play_matchstick(t_game *game)
 	}
       else if (value == -1)
 	{
-	  my_putchar('\n');
 	  return (0);
 	}
       else if ((value = ia_turn(game)) == 0)
