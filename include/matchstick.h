@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Tue Feb 21 18:38:22 2017 julian ladjani
-** Last update Sun Feb 26 05:51:50 2017 julian ladjani
+** Last update Sun Feb 26 22:06:24 2017 julian ladjani
 */
 
 #ifndef MATCHSTICK_H_
@@ -42,6 +42,7 @@ char		*my_revstrprintf(char *str);
 char		*my_convertbase(unsigned int number, int base, char *baseconf);
 char		*my_putnbr(int nb);
 char		*get_next_line(const int fd, int *end);
+char		*my_turn_line(t_game *game, char *line, int *end);
 char		**make_map(int  nbline, int maxlenght);
 
 int		verif_args(int ac, char **av);
