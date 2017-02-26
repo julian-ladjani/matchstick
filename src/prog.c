@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Thu Feb 23 16:13:17 2017 julian ladjani
-** Last update Sun Feb 26 14:54:15 2017 julian ladjani
+** Last update Sun Feb 26 15:14:16 2017 julian ladjani
 */
 
 #include "matchstick.h"
@@ -27,7 +27,7 @@ int	play_matchstick(t_game *game)
       if ((value = my_turn(game)) == 0)
 	{
 	  my_putstr("You lost, too bad...\n", 1);
-	  return (0);
+	  return (2);
 	}
       else if (value == -1)
 	{
